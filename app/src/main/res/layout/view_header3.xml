@@ -3,7 +3,7 @@
     android:id="@+id/layout_stick_header"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:background="#edeaea"
+    android:background="#fff"
     android:descendantFocusability="blocksDescendants"
     android:focusable="false"
     android:orientation="horizontal"

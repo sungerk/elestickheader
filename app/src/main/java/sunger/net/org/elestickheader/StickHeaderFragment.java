@@ -16,6 +16,8 @@ import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+
 import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.ArrayList;
@@ -100,6 +102,12 @@ public class StickHeaderFragment extends Fragment {
         CommonAdapter filterAdapter = new CommonAdapter(R.layout.item_filter);
         filterAdapter.addData(dataFilter);
         recyclerViewFilter.setAdapter(filterAdapter);
+        filterAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                expandableLayout.collapse();
+            }
+        });
 
     }
 
