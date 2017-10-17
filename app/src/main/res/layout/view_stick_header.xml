@@ -1,41 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_stick_header"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#edeaea"
-    android:descendantFocusability="blocksDescendants"
-    android:focusable="false"
-    android:orientation="horizontal"
-    android:paddingBottom="10dp"
-    android:paddingTop="10dp">
+    android:layout_height="match_parent">
 
-    <TextView
+    <include layout="@layout/view_header3" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_filter"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="综合排序" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:background="#ee747272"
+        android:orientation="vertical"
+        android:visibility="invisible">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="好评优先" />
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/expandableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            app:el_duration="600"
+            app:el_expanded="true"
+            app:el_parallax="0.5">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="距离最近" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="筛选" />
+        </net.cachapa.expandablelayout.ExpandableLayout>
+    </LinearLayout>
 
-</LinearLayout>
+</FrameLayout>
